@@ -36,11 +36,30 @@ class BinaryTree {
 	}
 
 	contains(data) {
-
+		var currentNode = this.root;
+		while(currentNode !== null){
+			if (data === currentNode.data){
+				return true;
+				break;
+			} else if (data < currentNode.data) {
+					currentNode = currentNode.left;
+				}
+				else {
+					currentNode = currentNode.right;
+				}
+		}
+		if(currentNode === null) {
+			return false;
+		}
 	}
 
 	remove(data) {
-
+		if(contains(data) === true) {
+			var currentNode = this.root;
+			while (currentNode.data !== data){
+				
+			}
+		}
 	}
 
 	size() {
@@ -48,6 +67,10 @@ class BinaryTree {
 	}
 
 	isEmpty() {
-
+		if (this.root === null) {
+			return true;
+		} else {
+			return false;
+		}
 	}
 }
