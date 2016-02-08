@@ -39,7 +39,8 @@ var expectedBt = {
 				right: null
 			}
 		}
-	}
+	},
+	count: 10
 };
 
 describe('BinaryTree', () => {
@@ -145,12 +146,14 @@ describe('BinaryTree', () => {
 
 			bt.remove(15);
 			btCopy.root.right.left = null;
+			btCopy.count--;
 
 			bt.should.deep.equal(btCopy);
 
 			bt.remove(8);
 			btCopy.root.left.left = btCopy.root.left.left.left;
-
+			btCopy.count--;
+			
 			bt.should.deep.equal(btCopy);
 		});
 	});
